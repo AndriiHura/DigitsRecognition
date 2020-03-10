@@ -76,7 +76,7 @@ model.add(Dense(10, activation = "softmax"))
 
 
 # Loading pretrained weights
-model.load_weights("model_weights_50epochs.h5")
+model.load_weights("model_weights_2attempt.h5")
 
 
 input_data = 0
