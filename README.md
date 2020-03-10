@@ -5,16 +5,17 @@
 2.  Type **python Final.py**
 3.  Wait till you see the message, and then either type path to image, or type "quit" to stop app running.
 
-### PreparationWork.ipynb - Notebook with some of the work I did, some test, and also you can use it to generate some test data.
+### DataAugmentationAttempt.ipynb - Notebook with main work I did, you can fin there my new approach for this promleb, model training, and model estimation.
+
 
 ### images - folder with sample images.
-### GeneratedTestImages - folder with images I created to test a bit my app.
 
-### model_weights_50epochs.h5 - pretrained weight for tf keras model. I did all the trainings on kaggle kernel to train model faster.
+### model_weights_2attempt.h5 - pretrained weight for tf keras model. 
 
 
-* P.S. The app idea is based on the fact that it takes as input images like you send me, so that I just separate each image on several images, depending on their lenght, and than I feed each splitted image to the model. So that means, as long as you will feed this app with images like ones, that you sent me, it will work, but for example if image size won't be like (28, number_of_digits_on_the_image·28), or (number_of_digits_on_the_image·28, 28), it won't work. 
-  * Also I want to add that as model was trained on MNIST dataset(handwritten digits), it is not as perfect on images you sent me(because the are more like printed digits), but nevertheless it does pretty good accuracy. 
-  * And finally, this app doesn't take into account that, for example, all four images will me placed in first half of image, and ther rest will be empty. I did that way cause all sample images were like several several 1-digit images stacked together, so I assume for this task it is enough. But if it is not, I can do so that it will for any kind of image by separating task into 1) digit detection, 2) dectected areas classification.
-* P.S.P.S. And of course thank you for opportunity!
+* P.S. Ok, so this time I've changed my strategy. I had 3 ideas to work out. 
+  1. 1st one was to find some more suitable dataset, with typed digits, or something. I did found SVHN dataset, and tried to train model, but it wasn't very succesful. 
+  2. Another idea was to use OCR, but I wasn't familiar at all with this technique, so I decided to pass it till I will have no choice.
+  3. Final idea was to use ImageDataGenerators for Data Augmentation(to increase amount of training examples). I had only 10 example images, 4 digits each. So that I cropped those images into 40 1-digit images, and applied ImageDataGenerator to them, an made something like 10000 images. I think it will work out perfect for this problem, as long as I assume that other images(in your test set) are similar to those ones you've send me(they are of standard shape).
+* P.S.P.S. And thank you a lot for the 2nd opportunity! I hope this time I did better:)
 
