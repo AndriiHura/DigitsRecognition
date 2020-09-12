@@ -1,4 +1,4 @@
-# TestTaskFaifly
+# Digits Recognition 
 
 ##  Final.py - application itself. To run it: 
 1.  Open console.
